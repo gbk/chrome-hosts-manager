@@ -7,7 +7,6 @@ MAIN="../main"
 RELEASE="../release"
 
 rm -rf "$RELEASE"
-mkdir "$RELEASE"
 cp -r "$MAIN" "$RELEASE"
 rm -rf "$RELEASE/scripts"
 rm -rf "$RELEASE/styles"
@@ -19,7 +18,6 @@ doCompress () {
   TARGET="$RELEASE/$1"
   for i in `ls -1p $SOURCE | grep -v "/$"`
   do
-    echo "$SOURCE/$i"
     java -jar "$YUI" --charset=utf-8 -o "$TARGET/$i" "$SOURCE/$i"
   done
 }
@@ -29,7 +27,6 @@ doCompress "scripts/handle"
 doCompress "scripts/model"
 doCompress "scripts/util"
 doCompress "styles"
-mkdir "$RELEASE/scripts\lib"
-cp -r "$MAIN/scripts/lib" "$RELEASE/scripts/lib"
+cp -r "$MAIN/scripts/lib" "$RELEASE/scripts"
 
 echo finish

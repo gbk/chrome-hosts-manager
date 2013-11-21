@@ -34,7 +34,7 @@
 		 */
 		getHostsPath: function() {
 			try {
-				if (/windows/i.test(navigator.userAgent)) { // TODO
+			  if (embed.getPlatform() == 'windows') {
 					return embed.getSystemPath() + '\\drivers\\etc\\hosts';
 				} else {
 					return '/etc/hosts';
@@ -194,7 +194,7 @@
 	});
 })((function() {
 	var embed = document.createElement('embed');
-	embed.type = 'application/x-npapifileioforchrome';
+	embed.type = 'application/x-npapi-file-io';
 	document.getElementsByTagName('body')[0].appendChild(embed);
 	return embed;
 })(), {});
