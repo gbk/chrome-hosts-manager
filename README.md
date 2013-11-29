@@ -40,3 +40,8 @@ Chrome下切换hosts绑定的插件
 * 确保当前用户对hosts文件有写权限
 
 更多功能正在完善中...
+
+![截图](http://dl2.iteye.com/upload/attachment/0069/8984/3281ebc7-6834-39a3-a29f-06c6e60e8a70.png)
+
+![使用说明](http://dl2.iteye.com/upload/attachment/0082/2208/3268b410-e2c0-3124-889c-94e62ee80815.png)
+
