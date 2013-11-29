@@ -1,0 +1,4 @@
+/* Localized versions of Info.plist keys */
+
+CFBundleName = "npfs_x86_64";
+NSHumanReadableCopyright = "Copyright 2013 Alibaba";

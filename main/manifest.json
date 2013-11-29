@@ -22,11 +22,11 @@
 	"options_page": "option.html",
 	"permissions": [ "proxy", "tabs", "webRequest", "webRequestBlocking", "http://*/*", "https://*/*" ],
 	"plugins": [ {
-		"path": "./plugins/npapi-file-io-32.dll"
+		"path": "./plugins/npnpfs.dll"
 	}, {
-		"path": "./plugins/npapi-file-io-32.so"
+		"path": "./plugins/npnpfs.so"
 	}, {
-		"path": "./plugins/npapi-file-io-64.so"
+		"path": "./plugins/npnpfs.plugin"
 	} ],
 	"requirements": {
 		"plugins": {

@@ -1,0 +1,18 @@
+#include <CoreServices/CoreServices.r>
+
+resource 'STR#' (126) 
+{ {
+    "Copyright 2013 Alibaba",
+    "npfs"
+} };
+
+resource 'STR#' (127) 
+{ {
+    "",
+} };
+
+resource 'STR#' (128) 
+{ {
+    "application/x-npfs",
+    "",
+} };
