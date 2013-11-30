@@ -24,14 +24,16 @@
 	"plugins": [ {
 		"path": "./plugins/npnpfs.dll"
 	}, {
-		"path": "./plugins/npnpfs.so"
-	}, {
 		"path": "./plugins/npnpfs.plugin"
+	}, {
+		"path": "./plugins/npnpfs-64.so"
+	}, {
+		"path": "./plugins/npnpfs-32.so"
 	} ],
 	"requirements": {
 		"plugins": {
 			"npapi": false
 		}
 	},
-	"version": "0.4.0"
+	"version": "0.4.1"
 }

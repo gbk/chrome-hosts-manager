@@ -33,25 +33,13 @@
      * 获取hosts文件路径
      */
     getHostsPath: function() {
-      var path = '/etc/hosts';
-      try {
-        if (embed.getPlatform() == 'windows') {
-          path = embed.getSystemPath() + '\\drivers\\etc\\hosts';
-        } else if (embed.getPlatform() == 'osx') {
-          path = '/private/etc/hosts';
-        }
-      } catch (e) {
-        if (model.get('writeStorage') == '0') {
-          throw e;
-        }
-        var ua = navigator.userAgent;
-        if (/windows|win32/i.test(ua)) {
-          path = 'C:/WINDOWS/system32/drivers/etc/hosts';
-        } else if (/macintosh|mac_powerpc/i.test(ua)) {
-          path = '/private/etc/hosts';
-        }
+      if (embed.getPlatform() == 'windows') {
+        return 'C:/WINDOWS/system32/drivers/etc/hosts';
+      } else if (embed.getPlatform() == 'osx') {
+        return '/private/etc/hosts';
+      } else {
+        return '/etc/hosts';
       }
-      return path;
     },
 
     /**
@@ -154,7 +142,8 @@
     model.put('writeStorage', '1');
     openFlag = true;
   }
-  if (openFlag) {
+  // 非隐身模式下初次打开进入选项页面
+  if (openFlag && !chrome.extension.inIncognitoContext) {
     chrome.tabs.create({
       url: 'option.html'
     });

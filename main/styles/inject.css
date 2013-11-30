@@ -10,7 +10,7 @@
 	padding: 0 .5em;
 	border: none;
 	border-radius: 6px;
-	background: rgba(0, 0, 0, .35);
+	background: rgba(0, 0, 0, .3);
 	-webkit-transition: background 1s;
 	cursor: pointer;
 	line-height: 1.3em;
@@ -19,7 +19,7 @@
 	text-indent: 0;
 	text-decoration: none;
 	font-family: tahoma,arial;
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: bold;
 	color: #fff;
 }
