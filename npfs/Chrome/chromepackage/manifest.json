@@ -1,0 +1,9 @@
+{
+  "name": "npfs",
+  "version": "${FBSTRING_PLUGIN_VERSION}",
+  "description": "file system api for browsers",
+
+	"plugins": [
+    { "path": "npnpfs.dll", "public": true }
+  ]
+}
