@@ -48,6 +48,7 @@ std::string npfsAPI::getPlatform()
 std::string npfsAPI::getSystemPath()
 {
 #if defined(OS_WIN)
+    // FIXME Why it always fails here ? Can anybody help me ...
     char *value = NULL;
     size_t len = GetSystemDirectoryA(value, FILENAME_MAX);
     std::string result(value, len);
