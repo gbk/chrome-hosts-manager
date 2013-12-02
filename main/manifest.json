@@ -22,9 +22,9 @@
 	"options_page": "option.html",
 	"permissions": [ "proxy", "tabs", "webRequest", "webRequestBlocking", "http://*/*", "https://*/*" ],
 	"plugins": [ {
-		"path": "./plugins/npnpfs-win7.dll"
-	}, {
 		"path": "./plugins/npnpfs-xp.dll"
+	}, {
+		"path": "./plugins/npnpfs-win7.dll"
 	}, {
 		"path": "./plugins/npnpfs.plugin"
 	}, {
