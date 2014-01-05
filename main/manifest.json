@@ -20,7 +20,7 @@
 	"manifest_version": 2,
 	"name": "__MSG_appName__",
 	"options_page": "option.html",
-	"permissions": [ "proxy", "tabs", "webRequest", "webRequestBlocking", "http://*/*", "https://*/*" ],
+	"permissions": [ "proxy", "tabs", "browsingData", "webRequest", "webRequestBlocking", "http://*/*", "https://*/*" ],
 	"plugins": [ {
 		"path": "./plugins/npnpfs-xp.dll"
 	}, {
@@ -37,5 +37,5 @@
 			"npapi": false
 		}
 	},
-	"version": "0.4.3"
+	"version": "0.4.4"
 }

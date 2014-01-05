@@ -165,6 +165,11 @@ define(function(require, exports) {
 			}
 			model.saveFile(file || exports.getHostsPath(), content);
 		}
+		chrome.browsingData.remove({
+		  since: 0
+		}, {
+		  cache: true
+		});
 	};
 
 	/**

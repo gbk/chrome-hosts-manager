@@ -17,9 +17,21 @@ define(function(require, exports) {
 	showIP = null,
 
 	// 是否允许本地存储
-	writeStorage = null;
+	writeStorage = null,
 
-	// 初始化
+	manifest = {};
+
+  //加载manifest.json文件
+  $.ajax({
+    async: false,
+    dataType: 'json',
+    success: function(data) {
+      manifest = data;
+    },
+    url: '/manifest.json'
+  });
+	
+  // 初始化
 	$('body').append(optionRender.render({}));
 	showIP = $('#showIP').click(function() {
 		model.put('showIP', this.checked ? '1' : '0');
@@ -47,5 +59,12 @@ define(function(require, exports) {
 	});
 	$('#clearStorage').click(function() {
 		model.clearStorage();
+	});
+	$('#bugReport').mousedown(function() {
+	  var subject = '[BugReport]chrome-hosts-manager';
+	  var body = '\n\nversion:' + manifest.version;
+	  body += '\nuserAgent:' + navigator.userAgent;
+	  body = encodeURIComponent(body);
+	  this.href = 'mailto:ck0123456@gmail.com?subject=' + subject + '&body=' + body;
 	});
 });
