@@ -149,19 +149,43 @@
     });
   }
 
+  // 获取启用的组
+  var findCurrentGroup = function(details) {
+    var groups = model.get('data');
+    if (groups) {
+      var hostname = details.url.split('//')[1].split('/')[0];
+      var ip = details.ip;
+      // 对每组的启用项逐一匹配
+      for (var i in groups) {
+        var enables = [];
+        var group = groups[i];
+        group.pushEnables(enables);
+        for (var j = 0; j < enables.length; j++) {
+          var enable = enables[j];
+          // 发现匹配项后立即返回组名
+          if (enable.addr == ip && enable.hostname == hostname) {
+            return group.line;
+          }
+        }
+      }
+    }
+  };
+
   // 获取实际访问的IP放入缓存
   chrome.webRequest.onCompleted.addListener(function(details) {
     data[details.tabId] = details.ip;
     if (model.get('showIP') != '1') {
       return;
     }
+    var currentGroup = findCurrentGroup(details) || '';
+    var text = currentGroup ? details.ip + ' | ' + currentGroup : details.ip;
     chrome.tabs.executeScript(details.tabId, {
       code: '(function(ip){\
           if(ip){\
-            ip.innerHTML="' + details.ip + '";\
+            ip.innerHTML="' + text + '";\
           }else{\
             ip=document.createElement("div");\
-            ip.innerHTML="' + details.ip + '";\
+            ip.innerHTML="' + text + '";\
             ip.id="chrome-hosts-manager-ipaddr";\
             ip.title="' + chrome.i18n.getMessage('currentTabIP') +
                 chrome.i18n.getMessage('clickToHide') + '";\
