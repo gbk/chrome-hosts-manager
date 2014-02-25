@@ -39,7 +39,8 @@ define(function(require, exports) {
 
 	// "启用/禁用"事件
 	.on('checkon checkoff', '.node', function(evt) {
-		$(this).find('span[data-handle="check"]').removeClass('checkon checkoff').addClass(evt.type);
+	  var $this = $(this).removeClass('on off').addClass(evt.type.replace('check', ''));
+		$this.find('span[data-handle="check"]').removeClass('checkon checkoff').addClass(evt.type);
 	})
 
 	// "删除"事件

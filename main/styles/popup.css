@@ -42,6 +42,9 @@
 	border-radius: 6px;
 	color: #fff;
 }
+#content .off {
+	opacity: .5;
+}
 #content .line .ip {
 	float: left;
 	width: 135px;

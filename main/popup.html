@@ -17,7 +17,7 @@
 </div>
 </script>
 <script type="text/template" id="groupTemp">
-<div class="group node clearfix">
+<div class="group node clearfix {{enable?on:off}}">
 	<div class="name">
 		<span class="icon {{enable?checkon:checkoff}}" data-title="{{:checkGroup}}" data-handle="check"></span>
 		<span class="selectable" data-title="{{line}}">{{line}}</span>
@@ -32,7 +32,7 @@
 </div>
 </script>
 <script type="text/template" id="lineTemp">
-<li class="line node clearfix">
+<li class="line node clearfix {{enable?on:off}}">
 	<div class="ip">
 		<span class="icon {{enable?checkon:checkoff}}" data-title="{{:checkLine}}" data-handle="check"></span>
 		<span class="selectable" data-title="{{addr}}">{{addr}}</span>
