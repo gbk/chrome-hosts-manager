@@ -5,6 +5,11 @@
 <link rel="stylesheet" href="./styles/popup.css"/>
 <script type="text/template" id="headTemp">
 <div class="version selectable"><b>{{:appName}}</b> v{{version}}</div>
+<div class="search-panel">
+    <span class="searchTip">{{:searchTip}}</span>
+    <input id="search-input" class="search-input" value="{{searchTip}}"/>
+    <span class="icon fade refresh" data-title="{{:searchTitle}}" data-handle="searchHandle"></span>
+</div>
 <div class="panel">
 	<span class="hosts-path">{{:hostsPath}}</span>
 	<input id="hostsPath" class="hosts-editor" value="{{hostsPath}}"/>

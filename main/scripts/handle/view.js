@@ -287,6 +287,17 @@ define(function(require, exports) {
 	};
 
 	/**
+     * 搜索
+     */
+    exports.searchHandle = function () {
+        var val = $('#search-input').val().trim();
+        if (val) {
+            var data = biz.loadData();
+            alert(data);
+        }
+    };
+
+	/**
 	 * 刷新数据
 	 */
 	exports.refresh = function(refresh) {

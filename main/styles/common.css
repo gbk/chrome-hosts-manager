@@ -194,6 +194,29 @@ body {
 	text-align: right;
 	color: #2779aa;
 }
+
+.search-panel {
+    padding: 8px;
+    background: -webkit-linear-gradient(top, #fff 0%,#e3f1fa 20%,#d7ebf9 80%,#fff 100%);
+    border-radius: 6px;
+    text-align: left;
+    color: #2779aa;
+}
+
+.search-panel .search-input{
+    /*display: inline-block;*/
+    width: 330px;
+    height: 15px;
+    padding: .1em;
+    background-color: #fff;
+    border: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+    vertical-align: top;
+    color: #333;
+}
+
 .panel .hosts-editor {
 	display: inline-block;
 	width: 120px;
