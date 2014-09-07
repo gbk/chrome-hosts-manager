@@ -25,6 +25,11 @@ define(function(require, exports) {
 		view[target.data('handle')](target);
 	})
 
+    //搜索键盘事件
+     .on('keyup', '#search-input', function(){
+            view.searchHandle();
+     })
+
 	// 对行内非按钮区域的点击绑定到启用按钮上
 	.on('click', '.node', function(evt) {
 		!evt.target.getAttribute('data-handle') && view.check($(this).find('span[data-handle="check"]'));
