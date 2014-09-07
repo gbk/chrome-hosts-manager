@@ -291,9 +291,24 @@ define(function(require, exports) {
      */
     exports.searchHandle = function () {
         var val = $('#search-input').val().trim();
-        if (val) {
-            var data = biz.loadData();
-            alert(data);
+        var data = biz.loadData(), i, line , flag;
+        for (i in data) {
+            flag = false;
+            line = data[i].next;
+            while (line && line.target != data[i].target) {
+                if (line.addr.indexOf(val) != -1 || line.hostname.indexOf(val) != -1) {
+                    line.target.closest('.node').removeClass('hidden');
+                    flag = true;
+                } else {
+                    line.target.closest('.node').addClass('hidden');
+                }
+                line = line.next;
+            }
+            if (flag) {
+                data[i].target.closest('.block').removeClass('hidden');
+            } else {
+                data[i].target.closest('.block').addClass('hidden');
+            }
         }
     };
 
