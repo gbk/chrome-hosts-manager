@@ -36,6 +36,12 @@
 .refresh:hover {
 	background-position: -16px -64px;
 }
+.search {
+    background-position: 0 -272px;
+}
+.search:hover {
+    background-position: -16px -272px;
+}
 .edit {
 	background-position: 0 -80px;
 }
