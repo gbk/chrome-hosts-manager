@@ -287,6 +287,32 @@ define(function(require, exports) {
 	};
 
 	/**
+     * 搜索
+     */
+    exports.searchHandle = function () {
+        var val = $('#search-input').val().trim();
+        var data = biz.loadData(), i, line , flag;
+        for (i in data) {
+            flag = false;
+            line = data[i].next;
+            while (line && line.target != data[i].target) {
+                if (line.addr.indexOf(val) != -1 || line.hostname.indexOf(val) != -1) {
+                    line.target.closest('.node').removeClass('hidden');
+                    flag = true;
+                } else {
+                    line.target.closest('.node').addClass('hidden');
+                }
+                line = line.next;
+            }
+            if (flag) {
+                data[i].target.closest('.block').removeClass('hidden');
+            } else {
+                data[i].target.closest('.block').addClass('hidden');
+            }
+        }
+    };
+
+	/**
 	 * 刷新数据
 	 */
 	exports.refresh = function(refresh) {
