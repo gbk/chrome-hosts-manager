@@ -196,16 +196,13 @@ body {
 }
 
 .search-panel {
-    padding: 8px;
-    background: -webkit-linear-gradient(top, #fff 0%,#e3f1fa 20%,#d7ebf9 80%,#fff 100%);
-    border-radius: 6px;
-    text-align: left;
-    color: #2779aa;
+    padding-top: 5px;
 }
 
-.search-panel .search-input{
-    /*display: inline-block;*/
-    width: 330px;
+.search-panel .search-input,
+.panel .hosts-editor {
+    display: inline-block;
+    width: 120px;
     height: 15px;
     padding: .1em;
     background-color: #fff;
@@ -217,18 +214,14 @@ body {
     color: #333;
 }
 
-.panel .hosts-editor {
-	display: inline-block;
-	width: 120px;
-	height: 15px;
-	padding: .1em;
-	background-color: #fff;
-	border: none;
-	overflow: hidden;
-	white-space: nowrap;
-	text-align: left;
-	vertical-align: top;
-	color: #333;
+.search-panel .search-input {
+    margin-right: 115px;
+    -webkit-transition: all .4s;
+}
+
+.search-panel .search-input:focus {
+    width: 200px;
+    margin-right: 35px;
 }
 
 .version {

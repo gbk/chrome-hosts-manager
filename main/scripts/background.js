@@ -33,11 +33,15 @@
      * 获取hosts文件路径
      */
     getHostsPath: function() {
-      if (embed.getPlatform() == 'windows') {
-        return 'C:/WINDOWS/system32/drivers/etc/hosts';
-      } else if (embed.getPlatform() == 'osx') {
-        return '/private/etc/hosts';
-      } else {
+      try {
+        if (embed.getPlatform() == 'windows') {
+          return 'C:/WINDOWS/system32/drivers/etc/hosts';
+        } else if (embed.getPlatform() == 'osx') {
+          return '/private/etc/hosts';
+        } else {
+          return '/etc/hosts';
+        }
+      } catch (e) {
         return '/etc/hosts';
       }
     },
