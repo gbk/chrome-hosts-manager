@@ -26,3 +26,8 @@
 #chrome-hosts-manager-ipaddr:hover {
 	background: rgba(0, 0, 0, .7);
 }
+@media print {
+	#chrome-hosts-manager-ipaddr {
+		display: none !important;
+	}
+}
