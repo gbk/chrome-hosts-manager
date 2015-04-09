@@ -19,8 +19,8 @@ define(function(require, exports) {
 	doProxy = function(array) {
 		var script = '', i;
 		for (i = 0; i < array.length; i++) {
-			script += '}else if(host=="' + array[i].hostname + '"){';
-			script += 'return "PROXY ' + array[i].addr + ':80; DIRECT";';
+			script +='}else if(host=="' + array[i].hostname + '"){var port = 80;if((/:([0-9]+)/).test(url)){port= (url.match(/:([0-9]+)/))[1];}';
+			script += 'return "PROXY ' + array[i].addr + ':"+port+"; DIRECT";}';
 		}
 		chrome.proxy.settings.set({
 			value: {
