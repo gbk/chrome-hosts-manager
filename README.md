@@ -22,6 +22,8 @@ Moved from [Google Code](https://code.google.com/p/chrome-hosts-manager/)
 Chrome下切换hosts绑定的插件
 --------------------
 
+【**IMPORTANT**】如果打开是一片空白的话，请参考[这个](http://blog.csdn.net/isaisai/article/details/45064079)解决方案，感谢 [ISaiSai](http://my.csdn.net/ISaiSai)
+
 [点这里安装](https://chrome.google.com/webstore/detail/kpfmckjjpabojdhlncnccfhkfhbmnjfi)
 
 * 在浏览器中管理hosts文件, 可方便地进行增删改查与备份操作
